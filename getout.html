@@ -5,23 +5,20 @@
 <title>GetOut! · 이재준 포트폴리오</title><link rel="stylesheet" href="style.css"><script src="studio.js" defer></script>
 </head><body id="top"><a class="skip" href="#main">본문으로 이동</a>
 <header class="head shell">
-  <a class="brand" href="index.html" aria-label="이재준 포트폴리오 홈"><span class="symbol" aria-hidden="true">jj</span>이재준<span class="brand-sub">PORTFOLIO</span></a>
-  <nav aria-label="주 메뉴"><a href="index.html#about">소개</a><a href="index.html#skills">기술</a><a href="index.html#work">프로젝트</a><a href="index.html#career">커리어</a><a href="https://github.com/wowns1024-spec">GitHub</a></nav>
+  <a class="brand" href="index.html" aria-label="이재준 포트폴리오 홈">이재준 <span class="brand-sub">PORTFOLIO</span></a>
+  <nav aria-label="주 메뉴"><a href="index.html#work">프로젝트</a><a href="index.html#about">소개</a><a href="https://github.com/wowns1024-spec">GitHub</a></nav>
 </header>
 <main id="main" class="shell case getout" data-case="getout">
-  <a class="crumb" href="index.html#cases">← 전체 사례</a>
-  <header class="case-hero"><div><p class="type">GetOut! <span>/</span> 게임 · UX/UI</p><h1>GetOut!</h1><p class="case-purpose">집주인과 도둑이 대결하는 1대4 PC 게임</p><p class="blurb">집주인 한 명은 함정을 설치해 금고를 지키고, 도둑 네 명은 저택에 침입해 금고를 노립니다.</p></div><figure class="visual getout">
-  <div class="art"><span class="bigtype" aria-hidden="true">GETOUT!</span><img src="assets/getout.webp" alt="저택을 배경으로 한 메인 메뉴 시안"></div>
-  <figcaption>저택을 배경으로 한 메인 메뉴 시안</figcaption>
-</figure></header>
+  <a class="crumb" href="index.html#cases">전체 프로젝트</a>
+  <header class="case-hero"><div><p class="type">GetOut! <span>/</span> 게임 · UX/UI</p><h1>GetOut!</h1><p class="case-purpose">집주인이 고른 함정은 그대로 설치될까?</p><p class="blurb">집주인 한 명과 도둑 네 명이 겨루는 게임입니다. 저는 집주인의 함정 선택 UI를 시험하며 영역이 고르지 않은 문제를 찾았고, 수정 뒤 실제 키보드와 마우스로 선택과 취소를 검증했습니다.</p></div><figure class="case-photo photo-getout"><img src="assets/trap-wheel.webp" alt="집주인 클라이언트에서 확인한 함정 선택 휠"><figcaption>Unity 검증 빌드 · 집주인 화면 · <a href="assets/trap-wheel.webp">원본 보기</a></figcaption></figure></header>
   <dl class="facts"><div><dt>작업 기간</dt><dd>2026.08 — 09</dd></div><div><dt>담당 역할</dt><dd>기획 · UX/UI 설계와 실행 검증</dd></div><div><dt>작업 환경</dt><dd>Unity / Figma / GitLab</dd></div></dl>
-  <div class="tech-line"><strong>작업 도구</strong><span class="tech-mark"><img src="assets/tech/figma.svg" width="22" height="22" alt="">Figma</span></div>
-  <section id="video" class="films"><h2>프로젝트 영상</h2><figure class="film"><video controls playsinline preload="none" poster="assets/video/getout-play.jpg" aria-label="게임 플레이 영상"><source src="assets/video/getout-play.mp4" type="video/mp4"></video><figcaption><strong>게임 플레이</strong><span>집주인과 도둑의 역할, 저택에서 진행되는 미니게임과 플레이 장면을 볼 수 있습니다.</span></figcaption></figure></section>
+
   <section class="finding" aria-label="프로젝트 결과"><div><p class="type">검증 빌드 · 키보드와 마우스</p><h2>6종 모두 일치</h2></div><p>함정을 하나씩 골랐을 때 종류마다 요청 한 건이 전달됐고, 호스트가 승인한 뒤 선택값이 일치했습니다. Esc로 취소했을 때는 추가 요청이 없었습니다.</p></section>
   <div class="narrative"><section class="scene" aria-label="프로젝트 인터랙션"><p class="type">GetOut! / 목표 안내</p><h2>내 역할에 맞는 안내는?</h2><p>역할과 경기 단계를 골라 HUD에 들어간 문구를 확인해 보세요. 화면 배치는 웹용으로 재구성했습니다.</p><div class="lab"><div class="controls" role="group" aria-label="플레이어 역할"><button type="button" data-option="0" aria-pressed="true">집주인</button><button type="button" data-option="1" aria-pressed="false">도둑</button></div><div class="controls" role="group" aria-label="경기 단계"><button type="button" data-option="0" aria-pressed="true">준비 단계</button><button type="button" data-option="1" aria-pressed="false">본게임</button></div><div class="gamehud result" aria-live="polite"><p data-detail>집주인 · 준비 단계</p><h3 data-output>함정을 설치하세요</h3></div></div><noscript>시연 조작은 자바스크립트를 켜면 사용할 수 있습니다. 아래에서 판단과 결과를 읽을 수 있습니다.</noscript></section>
   <article class="story"><h2>작업 노트</h2><p class="opening">팀 테스트에서 게임이 시작된 뒤 무엇을 해야 할지 모르겠다는 의견이 나왔습니다. 두 역할 모두 화면에 ‘역할 목표를 수행하세요’가 떴습니다. 집주인이 지킬 대상도, 도둑이 노릴 대상도 알 수 없는 문장이었습니다.</p><section><h3>한 문구를 네 상황으로</h3><p>목표를 역할과 경기 단계로 나눴습니다. 준비 단계에는 곧 할 행동을, 본게임에는 승패를 가르는 대상을 문장에 넣었습니다. 제안한 문구가 병합된 것을 확인했고, 변경 후 이해도는 측정하지 않았습니다.</p></section>
 <section id="controls-test"><h3>선택 휠에서 시험한 것</h3><p>9월 15일 검증 빌드에서 실제 G키와 마우스로 함정 6종을 골라 각 요청이 한 번 전달되고 Host 승인 뒤 선택값이 일치하는지 확인했습니다.</p><figure><img loading="lazy" src="assets/trap-wheel.webp" alt="Unity 집주인 클라이언트에서 연 함정 선택 휠"><figcaption>9월 15일 · 실제 선택 검증 화면</figcaption></figure></section>
 <section><h3>세 칸의 경계를 다시 맞추다</h3><p>선택을 유지하고 취소하는 동작을 시험하다가 세 칸이 같은 넓이로 보이지 않는 걸 발견했습니다. 각 영역을 120도로 나누도록 요청하고 9월 12일 실제 테스트 프로젝트에서 반영된 화면을 확인했습니다.</p><div class="wheel-examples"><figure><img src="assets/wheel-before.webp" loading="lazy" alt="교정 전 Unity 실행 화면에서 열린 원형 함정 메뉴"><figcaption>교정 전 · Unity 실행 화면</figcaption></figure><figure><img src="assets/wheel-layout.webp" loading="lazy" alt="세 영역을 같은 각도로 나눈 선택 휠 검사 화면"><figcaption>교정 후 · 선택 영역 오프라인 검사</figcaption></figure></div></section><section><h3>취소도 플레이의 일부</h3><p>Esc로 닫을 때 추가 요청이 발생하는지, 다시 캐릭터를 조작할 수 있게 커서 잠금이 돌아오는지도 살폈습니다. 다섯 프로세스를 실행하고 그중 두 화면을 렌더링해 선택과 취소를 확인했습니다. 선택 속도와 오조작률은 측정 범위에서 제외했습니다.</p></section></article></div>
+  <section id="video" class="films"><h2>프로젝트 영상</h2><figure class="film"><video controls playsinline preload="none" poster="assets/video/getout-play.jpg" aria-label="게임 플레이 영상"><source src="assets/video/getout-play.mp4" type="video/mp4"></video><figcaption><strong>게임 플레이</strong><span>집주인과 도둑의 역할, 저택에서 진행되는 미니게임과 플레이 장면을 볼 수 있습니다.</span></figcaption></figure></section>
   <a class="next" href="moa.html"><span>다음 프로젝트</span><strong>MOA</strong><span>금융 · 웹</span></a>
 </main>
 <footer class="shell foot"><span>이재준 · SSAFY 15기</span><a href="#top">맨 위로</a></footer></body></html>

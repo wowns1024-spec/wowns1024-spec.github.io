@@ -1,58 +1,52 @@
 <!doctype html>
-<html lang="ko"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#faf9f6"><meta name="description" content="이재준이 만든 네 프로젝트에서 설계와 검증 과정을 직접 살펴보세요.">
-<title>이재준 · 개발 포트폴리오</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="home.css">
-</head><body class="landing" id="top"><a class="skip" href="#main">본문으로 이동</a>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151d24">
+  <meta name="description" content="이재준의 개발 포트폴리오. AI 홈캠의 모델 선택부터 금융 웹 인증까지, 네 프로젝트에서 내린 결정과 검증 과정을 소개합니다.">
+  <title>이재준 | 개발 포트폴리오</title>
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="home.css">
+</head>
+<body id="top" class="landing">
+<a class="skip" href="#main">본문으로 이동</a>
 <header class="head shell">
-  <a class="brand" href="index.html" aria-label="이재준 포트폴리오 홈"><span class="symbol" aria-hidden="true">jj</span>이재준<span class="brand-sub">PORTFOLIO</span></a>
-  <nav aria-label="주 메뉴"><a href="index.html#about">소개</a><a href="index.html#work">프로젝트</a><a href="index.html#skills">기술</a><a href="index.html#career">커리어</a><a href="https://github.com/wowns1024-spec">GitHub</a></nav>
+  <a class="brand" href="index.html" aria-label="이재준 포트폴리오 홈">이재준 <span class="brand-sub">PORTFOLIO</span></a>
+  <nav aria-label="주 메뉴"><a href="#work">프로젝트</a><a href="#about">소개</a><a href="https://github.com/wowns1024-spec">GitHub</a></nav>
 </header>
 <main id="main">
-<section id="about" class="cover"><div class="shell cover-grid">
-  <div class="cover-copy">
-    <p class="byline">이재준 <span>/</span> 개발자</p>
-    <h1>제가 만든 홈캠이<br><em>제 웃음을</em><br>놓쳤습니다.</h1>
-    <p class="intro">직접 녹음한 웃음이 6초 동안 이어졌는데도 홈캠은 영상을 남기지 않았습니다. 녹음을 다시 듣고 세 모델을 비교한 뒤, 실제 기기에서 웃음과 박수가 담긴 영상까지 확인했습니다.</p>
-    <a class="cover-action" href="#work">빵긋 제작 이야기 <span aria-hidden="true">↓</span></a>
+<section class="lead-band" aria-labelledby="lead-title"><div class="shell lead-layout">
+  <div class="lead-copy">
+    <p class="role">소프트웨어 개발자</p>
+    <h1 id="lead-title">이재준<span>.</span></h1>
+    <p class="lead-story">제가 만든 홈캠이<br>제 웃음을 놓쳤습니다.</p>
+    <p class="lead-text">녹음을 다시 들으며 웃음이 이어진 6초를 표시했습니다. 그 구간에서 시작해 세 모델을 비교하고, 사람 추적까지 함께 돌릴 수 있는 모델을 골랐습니다.</p>
+    <a class="lead-link" href="homecam.html#sound-test">빵긋 모델 비교 읽기</a>
   </div>
-  <figure class="device"><img src="assets/homecam.webp" width="900" height="1200" alt="작업대에서 회전축과 웹캠을 연결해 시험 중인 흰색 홈캠">
-    <figcaption><strong>빵긋</strong> 직접 출력하고 조립한 홈캠</figcaption>
+  <figure class="bench">
+    <div class="bench-photo"><img src="assets/homecam.webp" alt="작업대 위에서 회전축과 카메라를 조립한 흰색 빵긋 홈캠" fetchpriority="high"></div>
+    <figcaption><div class="bench-caption"><strong>빵긋</strong><span>Jetson Orin Nano · 실물 시제품</span></div>
+    <table class="bench-data"><caption>오디오 단독 실행 시 평균 전력</caption>
+    <tbody><tr><th scope="row">PANNs CNN10</th><td><span class="meter" aria-hidden="true"></span></td><td>12.6 W</td></tr>
+    <tr><th scope="row">EfficientAT MN10</th><td><span class="meter selected" aria-hidden="true"></span></td><td>5.8 W</td></tr></tbody></table></figcaption>
   </figure>
 </div></section>
-<section id="work" class="feature"><div class="shell" id="cases">
-  <div class="feature-intro"><div class="brand-crop"><img src="assets/bbanggeut-brand.png" alt="빵긋 캐릭터와 로고" width="2700" height="1506" loading="lazy"></div>
-  <p>2026.07–08 <span>AI 모델 평가 · Jetson 이식 · 홈캠 제작</span></p></div>
-  <div class="feature-grid"><div><h2>웃음은 잡고,<br>평범한 대화는<br>어떻게 걸러냈을까?</h2>
-    <p>웃음을 더 잘 잡는 모델로 바꾸자 이번에는 대화까지 영상에 담겼습니다. 감지 기준을 조정한 뒤 같은 로그에서 두 소리가 얼마나 자주 기준을 넘는지 비교했습니다.</p>
-    <dl class="metric"><dt>말소리 우세 79,624구간 중 감지 기준을 넘은 구간</dt><dd>1,385 <span>→</span> 550</dd></dl>
-    <a class="feature-action" href="homecam.html#sound-test">모델을 고른 근거 읽기 <span aria-hidden="true">↗</span></a>
-  </div>
-  <figure class="footage"><video controls playsinline preload="none" poster="assets/video/homecam-family.jpg" aria-label="빵긋 홈캠 시점의 가정 촬영 영상"><source src="assets/video/homecam-family.mp4" type="video/mp4"></video><figcaption><span>가정 촬영 예시</span> 홈캠 시점에서 본 가족의 놀이 장면</figcaption>
-    <div class="feature-tools"><img src="assets/tech/python.svg" width="20" height="20" alt="">Python</div></figure></div>
+<section id="work" class="shell work-section"><div id="cases" class="section-heading"><h2>프로젝트</h2><span>2026</span></div>
+<div class="case-index">
+<a href="homecam.html" class="entry"><div class="thumb dashboard"><img src="assets/dashboard.webp" alt="Jetson에서 사람 탐지 모델의 측정값을 비교한 대시보드"></div>
+<div class="entry-copy"><p class="domain">AI · 임베디드</p><h3>빵긋</h3><p>웃음을 감지하면서 사람도 따라가는 홈캠</p><small>오디오 모델 선정 · Jetson 벤치마크 · 기구 제작</small></div></a>
+<a href="tingle.html" class="entry"><div class="thumb ring"><img src="assets/tingle.webp" alt="팅글 키링 외형 콘셉트"></div>
+<div class="entry-copy"><p class="domain">서비스 기획 · Android</p><h3>TINGLE</h3><p>키링에 설정이 적용돼야 끝나는 가입 절차</p><small>가입 정책 설계 · AI 협업 개발 · 실물 키링 검증</small></div></a>
+<a href="moa.html" class="entry"><div class="thumb finance"><img src="assets/moa-home-card.webp" loading="lazy" alt="MOA 예·적금 추천 서비스 첫 화면"></div>
+<div class="entry-copy"><p class="domain">프론트엔드 · 금융 웹</p><h3>MOA</h3><p>새로고침 뒤에도 로그인 상태가 이어지는 금융 웹</p><small>Vue 상품 조회 · Django 인증 API 구현</small></div></a>
+<a href="getout.html" class="entry"><div class="thumb game"><img src="assets/trap-wheel.webp" loading="lazy" alt="GetOut! 실행 화면에서 함정을 선택하는 휠"></div>
+<div class="entry-copy"><p class="domain">게임 · UX/UI</p><h3>GetOut!</h3><p>집주인이 고른 함정이 그대로 설치되는지 확인하기</p><small>함정 선택 UI 교정 · 6종 실입력 검증</small></div></a>
 </div></section>
-<section class="more-work"><div class="shell"><h2>다른 프로젝트</h2><div class="work-grid">
-<article class="work-item"><div class="project-art art-tingle"><img src="assets/tingle.webp" loading="lazy" alt="팅글 키링 외형 콘셉트"></div>
-  <div class="work-copy"><p class="byline">기획 · Android 검증</p><h3>TINGLE</h3><p class="purpose">키링으로 만나는 오프라인 소개팅</p><p class="choice">키링에 설정이 적용되고 서버가 확인한 뒤에만 가입을 마치도록 순서를 정했습니다.</p>
-  <div class="tech-line"><strong>사용 언어</strong><span class="tech-mark"><img src="assets/tech/kotlin.svg" width="22" height="22" alt="">Kotlin</span></div><a class="read-work" href="tingle.html">가입 흐름 살펴보기 <span aria-hidden="true">↗</span></a></div></article>
-<article class="work-item"><div class="project-art art-getout"><img src="assets/getout.webp" loading="lazy" alt="저택을 배경으로 한 GetOut! 메인 메뉴 시안"></div>
-  <div class="work-copy"><p class="byline">기획 · UI/UX 디자인</p><h3>GetOut!</h3><p class="purpose">집주인과 도둑이 대결하는 1대4 게임</p><p class="choice">두 역할에 똑같이 뜨던 안내를 바꿨습니다. 집주인과 도둑이 각자 무엇을 해야 할지 경기 단계별로 설계했습니다.</p>
-  <div class="tech-line"><strong>작업 도구</strong><span class="tech-mark"><img src="assets/tech/figma.svg" width="22" height="22" alt="">Figma</span></div><a class="read-work" href="getout.html">역할별 화면 살펴보기 <span aria-hidden="true">↗</span></a></div></article>
-<article class="work-item"><div class="project-art art-moa"><img src="assets/moa-home-card.webp" alt="MOA 홈 화면의 예금 비교와 금융상품 추천 버튼" loading="lazy"></div>
-  <div class="work-copy"><p class="byline">Vue 프론트엔드 · Django 인증</p><h3>MOA</h3><p class="purpose">저축 계획에 맞는 예·적금 추천</p><p class="choice">새로고침해도 로그인 화면이 흔들리지 않도록 저장된 정보로 화면을 복원하고 서버 응답으로 갱신했습니다.</p>
-  <div class="tech-line"><strong>사용 언어</strong><span class="tech-mark"><img src="assets/tech/python.svg" width="22" height="22" alt="">Python</span><span class="tech-mark"><img src="assets/tech/javascript.svg" width="22" height="22" alt="">JavaScript</span></div><a class="read-work" href="moa.html">인증 흐름 살펴보기 <span aria-hidden="true">↗</span></a></div></article>
-</div></div></section>
-<section id="skills" class="skill-band"><div class="shell band-layout">
-  <h2>사용 기술</h2><dl class="skill-rows"><div><dt>언어</dt><dd><strong>Python · Kotlin · JavaScript</strong><p>빵긋의 성능 측정 프로그램을 Python으로 만들었습니다. 팅글의 Kotlin 변경은 AI와 함께 구현·검토했고, MOA의 Vue 화면에는 JavaScript를 사용했습니다.</p></dd></div>
-<div><dt>웹 · 모바일</dt><dd><strong>Vue 3 · Next.js · Compose Multiplatform</strong><p>상품 조회 화면, 실험 대시보드, Android 가입 흐름에 각각 사용했습니다.</p></dd></div>
-<div><dt>서버 · API</dt><dd><strong>Django REST Framework · Postman</strong><p>로그인·로그아웃 API를 구현하고 상품 조회 응답을 확인했습니다.</p></dd></div>
-<div><dt>AI · 임베디드</dt><dd><strong>YOLO · ByteTrack · EfficientAT · TensorRT</strong><p>Jetson Orin Nano에서 사람을 추적하고 웃음과 박수를 감지했습니다.</p></dd></div>
-<div><dt>설계 · 협업</dt><dd><strong>Figma · Unity · GitLab</strong><p>게임 시안과 실행 화면을 대조하고, 팀의 변경 사항을 리뷰했습니다.</p></dd></div></dl>
-</div></section>
-<section id="career" class="career-band"><div class="shell band-layout">
-  <h2>커리어</h2><article class="academy"><p class="career-date">2026.01 — 현재 · 교육</p>
-  <h3>삼성 청년 AI 소프트웨어 아카데미<br>(SSAFY) 15기</h3>
-  <p>회계학을 전공하고 빅데이터 분석을 부전공한 뒤 SSAFY에 입과했습니다. 첫 팀 프로젝트에서는 금융 웹 서비스의 상품 조회와 인증을 구현했고, 이후 AI 홈캠 제작과 게임 UX 설계를 거쳐 6인 팀 팅글의 서비스 기획과 Android 검증을 맡았습니다.</p></article>
-</div></section>
+<section id="about" class="profile"><div class="shell profile-layout">
+<h2>소개</h2><div><p class="profile-intro">회계학을 전공하고 빅데이터 분석을 부전공했습니다. SSAFY에서 처음 만든 서비스는 저축 계획에 맞는 예·적금을 찾아주는 MOA였습니다.</p>
+<dl class="profile-details">
+<div id="career"><dt>교육</dt><dd>삼성 청년 AI 소프트웨어 아카데미 15기<br><span>2026.01 — 현재</span></dd></div>
+<div id="skills"><dt>개발 경험</dt><dd>Vue와 Django로 상품 조회와 인증을 연결했습니다. 빵긋에서는 Python으로 장치 로그를 수집했고, 팅글에서는 6인 팀의 PM으로 가입 정책을 정하고 Android와 키링에서 검증했습니다.</dd></div>
+</dl></div></div></section>
 </main>
-<footer class="shell foot"><span>이재준 · 개발 포트폴리오</span><a href="#top">맨 위로 ↑</a></footer></body></html>
+<footer class="shell foot"><span>이재준 · 개발 포트폴리오</span><a href="#top">맨 위로</a></footer>
+</body></html>

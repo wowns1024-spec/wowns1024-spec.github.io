@@ -73,15 +73,15 @@ function enableCase() {
     const advance = page.querySelector("[data-advance]");
     const reset = page.querySelector("[data-reset]");
     const profileResult = page.querySelector("[data-profile-result]");
-    const beforeRefresh = ["로그인", "요청 전", "로그인 중", "브라우저에는 로그인할 때 받은 토큰과 사용자 정보가 저장되어 있습니다."];
-    const reloading = ["저장된 사용자", "조회 중", "저장한 사용자로 화면 복원", "Vue가 저장된 사용자를 읽고, 토큰을 요청 헤더에 담아 프로필을 조회합니다."];
+    const beforeRefresh = ["로그인", "요청 전", "로그인 중", "사용자가 로그인한 상태에서 상품을 보고 있습니다."];
+    const reloading = ["확인 중", "요청 중", "서버에 인증 상태 요청", "페이지가 다시 열려 Vue 메모리의 상태가 초기화됐습니다. 서버에서 인증 상태를 확인합니다."];
     const steps = [
       beforeRefresh, reloading,
-      ["로그인", "조회 성공", "최신 프로필로 갱신", "서버에서 받은 사용자 정보를 저장하고 화면에 반영합니다."]
+      ["로그인", "인증 유효", "로그인 상태 복원", "서버가 인증된 사용자로 확인해 Vue 화면에 로그인 상태를 반영합니다."]
     ];
     const failureSteps = [
       beforeRefresh, reloading,
-      ["비로그인", "조회 실패", "인증 정보 초기화", "프로필을 불러오지 못해 브라우저에서 토큰과 사용자 정보를 지우고 비로그인 화면을 표시합니다."]
+      ["비로그인", "인증 만료", "비로그인 상태 표시", "서버에서 인증이 유효하지 않다고 응답해 비로그인 화면을 표시합니다."]
     ];
     let step = 0;
     function update() {

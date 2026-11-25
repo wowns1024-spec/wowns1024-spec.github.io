@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f6f1"><meta name="description" content="저축 조건에 맞는 예·적금을 찾는 2인 프로젝트. 상품 조회와 입력 폼을 만들고, Django의 인증 결과를 Vue 화면에 연결했습니다.">
+<title>MOA · 이재준 포트폴리오</title><link rel="stylesheet" href="style.css"><script src="studio.js" defer></script>
+</head><body id="top"><a class="skip" href="#main">본문으로 이동</a>
+<header class="head shell">
+  <a class="brand" href="index.html" aria-label="이재준 포트폴리오 홈"><span class="symbol" aria-hidden="true">jj</span>이재준<span class="brand-sub">PORTFOLIO</span></a>
+  <nav aria-label="주 메뉴"><a href="index.html#about">소개</a><a href="index.html#skills">기술</a><a href="index.html#work">프로젝트</a><a href="index.html#career">커리어</a><a href="https://github.com/wowns1024-spec">GitHub</a></nav>
+</header>
+<main id="main" class="shell case moa" data-case="moa">
+  <a class="crumb" href="index.html#cases">← 전체 사례</a>
+  <header class="case-hero"><div><p class="type">MOA <span>/</span> 금융 · 웹</p><h1>MOA</h1><p class="case-purpose">저축 계획에 맞는 예·적금 추천 서비스</p><p class="blurb">현재 자산과 월 저축 가능액을 입력하면 조건에 맞는 상품 세 개를 비교하고, 선택한 상품의 금리로 목표 금액까지 걸리는 기간을 확인할 수 있습니다.</p></div><figure class="visual moa">
+  <img src="assets/moa-home.webp" width="2040" height="1164" alt="MOA 홈 화면. 예금 비교, 금융상품 추천, 목표 금액 계산기 등 주요 서비스 여섯 가지">
+  <figcaption>MOA 홈 화면 · <a href="assets/moa-home.webp">원본 크기로 보기</a></figcaption>
+</figure></header>
+  <dl class="facts"><div><dt>작업 기간</dt><dd>2026.06</dd></div><div><dt>담당 역할</dt><dd>Vue 화면 · 로그인과 로그아웃 API</dd></div><div><dt>작업 환경</dt><dd>Vue 3 / Django REST Framework / Postman</dd></div></dl>
+  <div class="tech-line"><strong>사용 언어</strong><span class="tech-mark"><img src="assets/tech/python.svg" width="22" height="22" alt="">Python</span><span class="tech-mark"><img src="assets/tech/javascript.svg" width="22" height="22" alt="">JavaScript</span></div>
+  <section class="finding" aria-label="프로젝트 결과"><div><p class="type">브라우저 저장소 · 토큰 인증</p><h2>로그인 상태 복원</h2></div><p>새로고침하면 저장해 둔 사용자 정보로 화면을 먼저 복원합니다. 저장된 사용자가 있으면 토큰을 담아 프로필을 요청합니다. 성공하면 최신 정보로 갱신하고, 실패하면 저장한 인증 정보를 지웁니다.</p></section>
+  <div class="narrative"><section class="scene" aria-label="프로젝트 인터랙션"><p class="type">MOA / 로그인 상태 복원</p><h2>새로고침을 한 번 해보세요.</h2><p>아래는 인증 흐름을 설명하는 시연입니다. 새로고침과 서버 확인을 순서대로 눌러 보세요.</p><div class="lab"><label class="session-setting">새로고침 후 프로필 조회 결과 <select data-profile-result><option value="success">조회 성공</option><option value="failure">조회 실패</option></select></label><div class="result" aria-live="polite"><div class="stats"><div><span>Vue 화면</span><strong data-value="a">로그인</strong></div><div><span>프로필 요청</span><strong data-value="b">요청 전</strong></div></div><h3 data-output>로그인 중</h3><p data-detail>로그인한 사용자가 상품을 보고 있습니다.</p></div><div class="controls"><button type="button" data-advance>새로고침</button><button type="button" data-reset>처음으로</button></div></div><noscript>시연 조작은 자바스크립트를 켜면 사용할 수 있습니다. 아래에서 판단과 결과를 읽을 수 있습니다.</noscript></section>
+  <article class="story"><h2>작업 노트</h2><p class="opening">로그인 시 Django는 세션을 생성하고 DRF 토큰과 사용자 정보를 응답합니다. Vue는 토큰과 사용자 정보를 localStorage에 저장해 페이지를 다시 열어도 사용할 수 있게 했습니다.</p><section><h3>화면을 복원하는 기준</h3><p>저장된 사용자 정보가 있으면 Vue가 <code>GET /api/accounts/me/</code>를 호출합니다. 공통 요청 함수는 저장한 토큰을 <code>Authorization: Token …</code> 헤더로 보냅니다. 응답이 오면 프로필을 갱신하고, 인증 오류나 연결 실패로 조회할 수 없으면 토큰과 사용자 정보를 지워 비로그인 화면으로 돌아갑니다.</p></section>
+<section><h3>내가 구현한 화면</h3><p>현재 자산과 월 저축 여력 등을 입력하는 폼, 상품 조회 화면, API 응답 표시를 맡았습니다. 팀 서비스는 조건에 맞는 세 상품을 비교하고 선택한 금리로 목표까지 걸리는 기간을 보여줍니다.</p></section>
+<section id="empty-list"><h3>상품 목록이 비었을 때</h3><p>Postman으로 상품 조회 API를 직접 불러 응답에 데이터가 있는지 확인했습니다. 같은 상품이 API 응답에는 들어 있었고 Vue의 목록에는 보이지 않았습니다. 그래서 서버의 데이터 수집부터 다시 점검하는 대신, 응답을 받은 뒤 화면에 표시하기까지의 구간으로 조사 범위를 좁혔습니다. 이때 기록으로 남은 것은 원인을 좁힌 단계까지입니다.</p></section></article></div>
+  <a class="next" href="tingle.html"><span>다음 프로젝트</span><strong>TINGLE</strong><span>모바일 · BLE</span></a>
+</main>
+<footer class="shell foot"><span>이재준 · SSAFY 15기</span><a href="#top">맨 위로</a></footer></body></html>

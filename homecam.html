@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f6f1"><meta name="description" content="가족이 웃거나 박수칠 때 영상을 남기는 홈캠. 한 대의 Jetson으로 소리를 듣고 사람을 따라가도록 모델을 비교하고 본체를 제작했습니다.">
+<title>빵긋 · 이재준 포트폴리오</title><link rel="stylesheet" href="style.css"><script src="studio.js" defer></script>
+</head><body id="top"><a class="skip" href="#main">본문으로 이동</a>
+<header class="head shell">
+  <a class="brand" href="index.html" aria-label="이재준 포트폴리오 홈"><span class="symbol" aria-hidden="true">jj</span>이재준<span class="brand-sub">PORTFOLIO</span></a>
+  <nav aria-label="주 메뉴"><a href="index.html#about">소개</a><a href="index.html#skills">기술</a><a href="index.html#work">프로젝트</a><a href="index.html#career">커리어</a><a href="https://github.com/wowns1024-spec">GitHub</a></nav>
+</header>
+<main id="main" class="shell case homecam" data-case="homecam">
+  <a class="crumb" href="index.html#cases">← 전체 사례</a>
+  <header class="case-hero"><div><p class="type">빵긋 <span>/</span> AI · 하드웨어</p><h1>빵긋</h1><p class="case-purpose">가족의 웃음과 박수를 기록하는 홈캠</p><p class="blurb">홈캠이 사람을 따라가며 웃음이나 박수가 들린 순간을 영상으로 저장합니다. 가족은 앱에서 그 장면을 다시 볼 수 있습니다.</p></div><figure class="visual homecam">
+  <div class="brand-visual"><img src="assets/bbanggeut-brand.png" width="2700" height="1506" alt="화분 옆에 선 카메라 캐릭터와 웃는 모양의 빵긋 로고"></div>
+  <figcaption>빵긋 서비스 로고 · <a href="assets/bbanggeut-brand.png">원본 크기로 보기</a></figcaption>
+</header>
+  <dl class="facts"><div><dt>작업 기간</dt><dd>2026.07 — 08</dd></div><div><dt>담당 역할</dt><dd>AI 모델 평가 · 엣지 추론 · 홈캠 제작</dd></div><div><dt>작업 환경</dt><dd>Jetson Orin Nano / Python / YOLO / ByteTrack</dd></div></dl>
+  <div class="tech-line"><strong>사용 언어</strong><span class="tech-mark"><img src="assets/tech/python.svg" width="22" height="22" alt="">Python</span></div>
+  <section id="video" class="films"><h2>프로젝트 영상</h2><figure class="film"><video controls playsinline preload="none" poster="assets/video/homecam-overview.jpg" aria-label="서비스 소개 영상"><source src="assets/video/homecam-overview.mp4" type="video/mp4"></video><figcaption><strong>서비스 소개</strong><span>홈캠이 가족의 순간을 기록하고 앱에서 영상을 확인하는 흐름을 소개합니다.</span></figcaption></figure><div class="film-extra"><figure class="film"><video controls playsinline preload="none" poster="assets/video/homecam-tracking.jpg" aria-label="자동 프레이밍 시험 영상"><source src="assets/video/homecam-tracking.mp4" type="video/mp4"></video><figcaption><strong>자동 프레이밍 시험</strong><span>두 사람이 움직일 때 탐지 영역과 카메라 구도가 어떻게 바뀌는지 살펴볼 수 있습니다.</span></figcaption></figure><figure class="film"><video controls playsinline preload="none" poster="assets/video/homecam-family.jpg" aria-label="가정 촬영 예시 영상"><source src="assets/video/homecam-family.mp4" type="video/mp4"></video><figcaption><strong>가정 촬영 예시</strong><span>가족이 바닥에 모여 놀이하는 상황을 홈캠 시점에서 담은 영상입니다.</span></figcaption></figure></div></section>
+  <section class="finding" aria-label="프로젝트 결과"><div><p class="type">동일 로그 · 임계값 비교</p><h2>1,385 → 550</h2></div><p>말소리 우세 79,624구간 중 웃음 감지 기준을 넘은 구간 수입니다. 임계값을 0.08에서 0.15로 올렸을 때 웃음 우세 81구간의 90%가 기준을 넘었습니다.</p></section>
+  <div class="narrative"><section class="scene" aria-label="프로젝트 인터랙션"><p class="type">빵긋 / 감지 기준</p><h2>어디까지 웃음으로 기록할까?</h2><p>같은 운영 로그에 세 가지 기준을 적용했습니다. 기준을 넘긴 구간의 비율을 비교해 보세요.</p><div class="lab"><div class="controls" role="group" aria-label="웃음 임계값"><button type="button" data-option="0" aria-pressed="false">0.08</button><button type="button" data-option="1" aria-pressed="true">0.15 · 채택</button><button type="button" data-option="2" aria-pressed="false">0.30</button></div><div class="result" aria-live="polite"><div class="stats"><div><span>말소리 우세 · 기준 초과</span><strong data-value="a">0.70%</strong></div><div><span>웃음 우세 · 기준 초과</span><strong data-value="b">90%</strong></div></div><h3 data-output>운영 기본값</h3><p data-detail>말소리 우세 구간 중 기준을 넘은 수가 550개로 줄고, 웃음 우세 구간의 90%가 남았습니다.</p></div><p class="sample">표본 · 말소리 우세 79,624구간 / 웃음 우세 81구간</p></div><noscript>시연 조작은 자바스크립트를 켜면 사용할 수 있습니다. 아래에서 판단과 결과를 읽을 수 있습니다.</noscript></section>
+  <article class="story"><h2>작업 노트</h2><p class="opening">직접 녹음한 소리에서 웃음이 6초 동안 들렸지만 YAMNet은 이벤트를 만들지 않았습니다. 녹음의 4.5초부터 10.5초까지를 직접 표시하고, 혼자 웃을 때와 둘이 웃을 때, TV가 켜진 방에서 웃을 때의 소리를 모았습니다. 모델을 바꾼 뒤에는 평범한 대화가 반복해서 영상에 담기는 문제가 남았습니다.</p><section id="sound-test"><h3>웃음을 놓친 6초에서 시작한 모델 비교</h3><p>웃음을 잘 감지해도 사람 추적에 쓸 전력이 남아야 했습니다. 오디오만 실행했을 때 PANNs는 평균 12.6W, EfficientAT은 5.8W를 써서 EfficientAT을 실기 검증 후보로 골랐습니다.</p>
+<table class="models"><caption>같은 음성으로 평가한 감지 성능 · 2,064개 샘플</caption>
+<thead><tr><th scope="col">모델</th><th scope="col">웃음 F1</th><th scope="col">박수 F1</th></tr></thead>
+<tbody><tr><th scope="row">YAMNet</th><td>0.621</td><td>0.835</td></tr><tr class="chosen"><th scope="row">EfficientAT MN10</th><td>0.855</td><td>0.966</td></tr><tr><th scope="row">PANNs CNN10</th><td>0.654</td><td>0.923</td></tr></tbody></table><p class="sample">F1은 감지의 정밀도와 재현율을 함께 나타내며 1에 가까울수록 높습니다.</p></section>
+<section><h3>숫자를 해석한 범위</h3><p>진단 로그 112,724개 구간 중 말소리 우세 79,624개와 웃음 우세 81개를 비교했습니다. 위 비율의 분모는 각 그룹의 구간 수입니다. 별도 실물 시험에서는 웃음과 박수가 함께 기록된 영상을 앱에서 확인했습니다.</p></section>
+</article></div>
+<section class="fieldnote" id="tracking">
+<header><p class="type">사람 추적 · Jetson Orin Nano</p><h2>두 사람이 교차할 때 누구를 놓치는가</h2></header>
+<div class="field-body"><p>홈캠은 가족 두 사람이 자리를 바꾸는 동안에도 둘을 함께 담아야 했습니다. 저는 Python으로 장치 로그를 수집하고 Next.js로 비교 화면을 만들었습니다. 두 사람이 교차하는 장면 395장으로 모델마다 세 번씩 측정하고, 발열이 결과에 미칠 영향을 줄이려고 매번 실행 순서를 바꿨습니다.</p>
+<table class="models"><caption>같은 교차 장면에서 비교한 속도와 탐지 성능</caption><thead><tr><th scope="col">모델</th><th scope="col">평균 FPS</th><th scope="col">교차 장면 F1</th></tr></thead><tbody><tr class="chosen"><th scope="row">YOLOv8n</th><td>27.1</td><td>91.60%</td></tr><tr><th scope="row">YOLO11n</th><td>26.6</td><td>86.57%</td></tr><tr><th scope="row">YOLO26n</th><td>29.2</td><td>69.23%</td></tr></tbody></table>
+<p>YOLO26n이 초당 약 두 장을 더 처리했지만 교차 장면에서 사람을 자주 놓쳤습니다. 저는 이 장면을 더 잘 잡은 YOLOv8n을 유지하고, 추론 속도는 TensorRT FP16으로 개선하는 방향을 택했습니다.</p><figure><img loading="lazy" src="assets/dashboard.webp" alt="홈캠 사람 탐지 실험의 실행 성능을 비교한 화면"><figcaption>Jetson 사람 탐지 모델 벤치마크</figcaption></figure></div></section>
+<section class="fieldnote"><header><p class="type">기구 제작 · 실물 시험</p><h2>카메라가 위아래로 움직이지 않던 날</h2></header><div class="field-body">
+<p>제어 채널을 바꾸고 PWM 신호와 공급 전압을 확인했습니다. 전압은 5.15~5.17V였습니다. 같은 배선에 정상 서보를 꽂자 바로 움직였습니다. 신호·전원·부품을 하나씩 바꿔 본 끝에 기존 서보로 원인을 좁혔습니다.</p>
+<figure><img src="assets/enclosure.webp" loading="lazy" alt="배터리와 Jetson, 회로를 나눠 배치한 홈캠 케이스 설계 모습"><figcaption>실제 부품을 재어 만든 케이스. 아래부터 배터리, 보드, 제어 회로를 배치했습니다.</figcaption></figure>
+<p>실물에서는 두 사람이 좌우와 아래로 움직일 때 카메라가 따라가고, 두 사람이 화면에서 사라졌을 때 기본 위치로 복귀하는 것까지 확인했습니다.</p></div></section>
+  <a class="next" href="getout.html"><span>다음 프로젝트</span><strong>GetOut!</strong><span>게임 · UX/UI</span></a>
+</main>
+<footer class="shell foot"><span>이재준 · SSAFY 15기</span><a href="#top">맨 위로</a></footer></body></html>

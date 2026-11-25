@@ -2,10 +2,10 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#151d24">
+  <meta name="theme-color" content="#f7f5ef">
   <meta name="description" content="이재준의 개발 포트폴리오. AI 홈캠의 모델 선택부터 금융 웹 인증까지, 네 프로젝트에서 내린 결정과 검증 과정을 소개합니다.">
   <title>이재준 | 개발 포트폴리오</title>
-  <link rel="stylesheet" href="style.css?v=5008155"><link rel="stylesheet" href="home.css?v=5008155">
+  <link rel="preload" href="PretendardVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=5008155"><link rel="stylesheet" href="portfolio-edition.css">
 </head>
 <body id="top" class="landing">
 <a class="skip" href="#main">본문으로 이동</a>
@@ -17,15 +17,15 @@
 <section class="lead-band" aria-labelledby="lead-title"><div class="shell lead-layout">
   <div class="lead-copy">
     <p class="role">이재준 · 소프트웨어 개발자</p>
-    <h1 id="lead-title" style="font-size:clamp(2.6rem,4.85vw,4.9rem);line-height:1.17">홈캠이 놓친 웃음 <span>6초,</span><br>세 모델을 시험했습니다.</h1>
+    <h1 id="lead-title">홈캠이 놓친 웃음 <span>6초,</span><br>세 모델을 시험했습니다.</h1>
     
     <p class="lead-text">가족이 웃으면 영상을 남기는 홈캠을 만들었습니다. 직접 녹음한 웃음을 놓친 구간에서 시작해 감지 성능을 비교했습니다. 같은 기기에서 사람도 추적해야 해 오디오 모델의 전력까지 측정했습니다.</p>
-    <a class="lead-link" href="homecam.html#sound-test">세 모델의 측정값 보기</a> <a href="#work" style="display:inline-block;margin:.5rem .65rem;color:#eef4f0;font-weight:650">프로젝트 4개 보기</a>
+    <div class="lead-actions"><a class="lead-link" href="homecam.html#sound-test">세 모델의 측정값 보기</a> <a class="work-link" href="#work">프로젝트 4개 보기</a></div>
   </div>
   <figure class="bench">
-    <div class="bench-photo"><video controls playsinline preload="none" poster="assets/video/homecam-tracking.jpg" aria-label="빵긋 실물 시험에서 움직이는 두 사람을 추적하는 장면" style="display:block;width:100%;aspect-ratio:16/9;background:#162029"><source src="assets/video/homecam-tracking.mp4" type="video/mp4"></video></div>
+    <div class="bench-photo"><video controls playsinline preload="none" poster="assets/video/homecam-tracking.jpg" aria-label="빵긋 실물 시험에서 움직이는 두 사람을 추적하는 장면"><source src="assets/video/homecam-tracking.mp4" type="video/mp4"></video></div>
     <figcaption><div class="bench-caption"><strong>빵긋</strong><span>Jetson Orin Nano · 두 사람 추적 시험</span></div>
-    <table class="bench-data" style="table-layout:auto"><caption>실기 검증 후보를 고를 때 비교한 두 지표</caption><thead><tr><th scope="col">모델</th><th scope="col" style="text-align:right;width:auto">웃음 F1</th><th scope="col" style="text-align:right;width:auto">평균 전력</th></tr></thead><tbody><tr><th scope="row">PANNs CNN10</th><td style="width:auto;text-align:right">0.654</td><td>12.6 W</td></tr><tr style="color:#d0f28a"><th scope="row">EfficientAT MN10</th><td style="width:auto;text-align:right">0.855</td><td>5.8 W</td></tr></tbody></table><p style="margin-top:.6rem;color:#dbe5e7;font-size:.86rem">F1은 같은 음성 2,064개로 평가했습니다. 전력은 오디오만 실행한 장치의 평균입니다.</p></figcaption>
+    <table class="bench-data"><caption>실기 검증 후보를 고를 때 비교한 두 지표</caption><thead><tr><th scope="col">모델</th><th scope="col">웃음 F1</th><th scope="col">평균 전력</th></tr></thead><tbody><tr><th scope="row">PANNs CNN10</th><td>0.654</td><td>12.6 W</td></tr><tr><th scope="row">EfficientAT MN10</th><td>0.855</td><td>5.8 W</td></tr></tbody></table><p class="bench-note">F1은 같은 음성 2,064개로 평가했습니다. 전력은 오디오만 실행한 장치의 평균입니다.</p></figcaption>
   </figure>
 </div></section>
 <section id="work" class="shell work-section"><div id="cases" class="section-heading"><h2>프로젝트</h2><span>2026</span></div>

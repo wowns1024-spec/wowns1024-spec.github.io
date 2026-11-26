@@ -2,7 +2,7 @@
 <html lang="ko"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f7f5ef"><meta name="description" content="가족이 웃거나 박수칠 때 영상을 남기는 홈캠. 한 대의 Jetson으로 소리를 듣고 사람을 따라가도록 모델을 비교하고 본체를 제작했습니다.">
-<title>빵긋 · 이재준 포트폴리오</title><link rel="preload" href="PretendardVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=5008155"><link rel="stylesheet" href="portfolio-edition.css"><script src="studio.js?v=5008155" defer></script>
+<title>빵긋 · 이재준 포트폴리오</title><link rel="preload" href="PretendardVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=5008155"><link rel="stylesheet" href="portfolio-edition.css?v=project-info-1"><script src="studio.js?v=5008155" defer></script>
 </head><body id="top"><a class="skip" href="#main">본문으로 이동</a>
 <header class="head shell">
   <a class="brand" href="index.html" aria-label="이재준 포트폴리오 홈">이재준 <span class="brand-sub">PORTFOLIO</span></a>
@@ -10,8 +10,18 @@
 </header>
 <main id="main" class="shell case homecam" data-case="homecam">
   <a class="crumb" href="index.html#cases">전체 프로젝트</a>
-  <header class="case-hero"><div><p class="type">빵긋 <span>/</span> AI · 하드웨어</p><h1>빵긋</h1><p class="case-purpose">웃음과 박수를 기록하는 AI 홈캠</p><p class="blurb">가족이 웃는 동안 홈캠은 사람을 따라가고, 그 순간을 앱에 남깁니다. 저는 같은 기기에서 소리 감지와 사람 추적을 함께 실행할 수 있도록 모델을 비교하고 홈캠을 제작했습니다.</p></div><figure class="case-photo photo-homecam"><img src="assets/homecam.webp" alt="작업대에서 시험 중인 빵긋 홈캠"><figcaption>직접 조립한 홈캠 시제품 · <a href="assets/homecam.webp">원본 보기</a></figcaption></figure></header>
-  <dl class="facts"><div><dt>작업 기간</dt><dd>2026.07 — 08</dd></div><div><dt>담당 역할</dt><dd>AI 모델 평가 · 엣지 추론 · 홈캠 제작</dd></div><div><dt>작업 환경</dt><dd>Jetson Orin Nano / Python / YOLO / ByteTrack</dd></div></dl>
+  <header class="case-hero">
+    <div class="case-intro">
+      <p class="case-period">2026.07 – 08</p>
+      <h1>빵긋</h1>
+      <p class="case-purpose">웃음과 박수를 감지해 그 순간을 영상으로 남기는 홈캠</p>
+      <dl class="project-meta">
+        <div><dt>내 역할</dt><dd>AI 모델 선정 · 사람 추적 · 홈캠 제작</dd></div>
+        <div><dt>사용 언어</dt><dd>Python</dd></div>
+        <div><dt>주요 기술</dt><dd>Jetson Orin Nano · YOLO · ByteTrack</dd></div>
+      </dl>
+    </div>
+    <figure class="case-photo photo-homecam"><img src="assets/homecam.webp" alt="작업대에서 시험 중인 빵긋 홈캠"><figcaption>직접 조립한 홈캠 시제품 · <a href="assets/homecam.webp">원본 보기</a></figcaption></figure></header>
 
   <section class="finding" aria-label="프로젝트 결과"><div><p class="type">동일 로그 · 임계값 비교</p><h2>1,385 → 550</h2></div><p>말소리 우세 79,624구간 중 웃음 감지 기준을 넘은 구간 수입니다. 임계값을 0.08에서 0.15로 올렸을 때 웃음 우세 81구간의 90%가 기준을 넘었습니다.</p></section>
   <div class="narrative"><section class="scene" aria-label="프로젝트 인터랙션"><p class="type">빵긋 / 감지 기준</p><h2>어디까지 웃음으로 기록할까?</h2><p>같은 운영 로그에 세 가지 기준을 적용했습니다. 기준을 넘긴 구간의 비율을 비교해 보세요.</p><div class="lab"><div class="controls" role="group" aria-label="웃음 임계값"><button type="button" data-option="0" aria-pressed="false">0.08</button><button type="button" data-option="1" aria-pressed="true">0.15 · 채택</button><button type="button" data-option="2" aria-pressed="false">0.30</button></div><div class="result" aria-live="polite"><div class="stats"><div><span>말소리 우세 · 기준 초과</span><strong data-value="a">0.70%</strong></div><div><span>웃음 우세 · 기준 초과</span><strong data-value="b">90%</strong></div></div><h3 data-output>운영 기본값</h3><p data-detail>말소리 우세 구간 중 기준을 넘은 수가 550개로 줄고, 웃음 우세 구간의 90%가 남았습니다.</p></div><p class="sample">표본 · 말소리 우세 79,624구간 / 웃음 우세 81구간</p></div><noscript>시연 조작은 자바스크립트를 켜면 사용할 수 있습니다. 아래에서 판단과 결과를 읽을 수 있습니다.</noscript></section>

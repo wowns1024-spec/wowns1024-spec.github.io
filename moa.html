@@ -2,7 +2,7 @@
 <html lang="ko"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f7f5ef"><meta name="description" content="저축 조건에 맞는 예·적금을 찾는 2인 프로젝트. 상품 조회와 입력 폼을 만들고, Django의 인증 결과를 Vue 화면에 연결했습니다.">
-<title>MOA · 이재준 포트폴리오</title><link rel="preload" href="PretendardVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=5008155"><link rel="stylesheet" href="portfolio-edition.css"><script src="studio.js?v=5008155" defer></script>
+<title>MOA · 이재준 포트폴리오</title><link rel="preload" href="PretendardVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=5008155"><link rel="stylesheet" href="portfolio-edition.css?v=project-info-1"><script src="studio.js?v=5008155" defer></script>
 </head><body id="top"><a class="skip" href="#main">본문으로 이동</a>
 <header class="head shell">
   <a class="brand" href="index.html" aria-label="이재준 포트폴리오 홈">이재준 <span class="brand-sub">PORTFOLIO</span></a>
@@ -10,8 +10,18 @@
 </header>
 <main id="main" class="shell case moa" data-case="moa">
   <a class="crumb" href="index.html#cases">전체 프로젝트</a>
-  <header class="case-hero"><div><p class="type">MOA <span>/</span> 금융 · 웹</p><h1>MOA</h1><p class="case-purpose">새로고침하면 내 로그인 상태는 어떻게 될까?</p><p class="blurb">저축 계획을 입력하면 예·적금 세 개를 비교할 수 있는 금융 웹입니다. 2인 팀에서 Vue 상품 조회 화면과 입력 폼을 만들고 Django의 로그인·로그아웃 API를 연결했습니다.</p></div><figure class="case-photo photo-moa"><img src="assets/moa-home.webp" alt="상품 비교와 추천 기능이 있는 MOA 첫 화면"><figcaption>MOA · 서비스 홈 화면 · <a href="assets/moa-home.webp">원본 보기</a></figcaption></figure></header>
-  <dl class="facts"><div><dt>작업 기간</dt><dd>2026.06</dd></div><div><dt>담당 역할</dt><dd>Vue 화면 · 로그인과 로그아웃 API</dd></div><div><dt>작업 환경</dt><dd>Vue 3 / Django REST Framework / Postman</dd></div></dl>
+  <header class="case-hero">
+    <div class="case-intro">
+      <p class="case-period">2026.06 · 2인 팀</p>
+      <h1>MOA</h1>
+      <p class="case-purpose">내 저축 계획에 맞는 예·적금 세 가지를 비교하는 웹 서비스</p>
+      <dl class="project-meta">
+        <div><dt>내 역할</dt><dd>상품 조회 화면 · 사용자 입력 폼 · 로그인·로그아웃 구현</dd></div>
+        <div><dt>사용 언어</dt><dd>JavaScript · Python</dd></div>
+        <div><dt>주요 기술</dt><dd>Vue 3 · Django REST Framework · Postman</dd></div>
+      </dl>
+    </div>
+    <figure class="case-photo photo-moa"><img src="assets/moa-home.webp" alt="상품 비교와 추천 기능이 있는 MOA 첫 화면"><figcaption>MOA · 서비스 홈 화면 · <a href="assets/moa-home.webp">원본 보기</a></figcaption></figure></header>
 <section class="finding" aria-label="프로젝트 결과"><div><p class="type">Vue · Django 인증</p><h2>로그인 상태 복원</h2></div><p>새로고침하면 Vue 메모리의 로그인 상태가 초기화됩니다. 페이지를 다시 열 때 서버에 인증 상태를 요청하고 그 응답을 화면에 반영했습니다.</p></section>
   <div class="narrative"><section class="scene" aria-label="프로젝트 인터랙션"><p class="type">MOA / 로그인 상태 복원</p><h2>새로고침을 한 번 해보세요.</h2><p>아래는 인증 흐름을 설명하는 시연입니다. 새로고침과 서버 확인을 순서대로 눌러 보세요.</p><div class="lab"><label class="session-setting">새로고침 후 서버 인증 결과 <select data-profile-result><option value="success">인증 유효</option><option value="failure">인증 만료</option></select></label><div class="result" aria-live="polite"><div class="stats"><div><span>Vue 화면</span><strong data-value="a">로그인</strong></div><div><span>인증 요청</span><strong data-value="b">요청 전</strong></div></div><h3 data-output>로그인 중</h3><p data-detail>로그인한 사용자가 상품을 보고 있습니다.</p></div><div class="controls"><button type="button" data-advance>새로고침</button><button type="button" data-reset>처음으로</button></div></div><noscript>시연 조작은 자바스크립트를 켜면 사용할 수 있습니다. 아래에서 판단과 결과를 읽을 수 있습니다.</noscript></section>
   <article class="story"><h2>작업 노트</h2><p class="opening">로그인에 성공한 직후와 페이지를 다시 여는 순간은 조건이 다릅니다. 새로고침으로 Vue의 상태가 초기화돼도 서버에서는 여전히 로그인한 사용자일 수 있습니다.</p><section><h3>화면을 복원하는 기준</h3><p>페이지가 다시 로드되면 서버에 현재 인증 상태를 요청합니다. 인증된 사용자로 확인되면 로그인 화면 상태를 복원하고, 인증이 유효하지 않으면 비로그인 상태를 표시합니다.</p></section>

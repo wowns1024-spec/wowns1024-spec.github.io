@@ -126,3 +126,22 @@ h1, h2, h3 { text-wrap: balance; }
   .bench-data { font-size: .92rem; }
 }
 
+
+.case-intro { min-width: 0; }
+.case-period { color: var(--muted); font-size: .91rem; font-variant-numeric: tabular-nums; }
+.case-hero .case-purpose { margin: .8rem 0 1.15rem; font-size: clamp(1.16rem, 1.75vw, 1.6rem); line-height: 1.5; word-break: keep-all; }
+.project-meta, .card-meta { margin: 0; padding-top: .8rem; border-top: 1px solid var(--line); }
+.project-meta > div, .card-meta > div { display: grid; grid-template-columns: 4.6em minmax(0, 1fr); gap: .65rem; align-items: baseline; }
+.project-meta > div + div, .card-meta > div + div { margin-top: .35rem; }
+.project-meta dt, .card-meta dt { font-weight: 650; color: var(--muted); }
+.project-meta dd, .card-meta dd { margin: 0; word-break: keep-all; overflow-wrap: anywhere; }
+.project-meta { font-size: 1rem; line-height: 1.55; }
+.card-meta { font-size: .93rem; line-height: 1.55; margin-top: .85rem; }
+.thumb.dashboard, .case-photo.photo-homecam img { background: #e8e6df; }
+.thumb.dashboard img, .case-photo.photo-homecam img { object-fit: contain; }
+.case-photo.photo-homecam img { height: clamp(16rem, 28vw, 23rem); }
+@media (max-width: 700px) {
+  .case-hero { grid-template-columns: minmax(0, 1fr); gap: 1.45rem; }
+  .case-hero, .fieldnote { padding-block: 1.6rem; }
+  .case-photo.photo-homecam img { height: 16rem; }
+}
